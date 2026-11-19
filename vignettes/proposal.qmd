@@ -1,0 +1,69 @@
+---
+title: "BST 260 Final Project Proposal"
+author: "Sejal Padmonkar"
+date: 11-18-2026
+format: html
+editor: visual
+---
+
+**To:** BST260 Teaching Team, Fall 2026
+
+## Vignette 1: Physical activity and sleep in young adults aged 20-40
+
+### Research question
+
+Is participation in moderate or vigorous physical activity associated with the odds of reporting trouble sleeping among US adults aged 20-40?
+
+### Data source
+
+The data is collected form the US National Health and Nutrition Examination Study (NHANES). The data is accessed using data(NHANES) from the NHANES package.
+
+### Unit of analysis and population
+
+The unit of analysis is one participant, represented by one row in the dataset. The population is young adults in the U.S. aged 20-40.
+
+### Exposure
+
+The exposure variable is PhysActive, and it is categorical/binary. These will be coded as Yes/No. Missingness will be handled in two different ways. If PhysActiveDays is NA and PhysActive is 0, then PhysActiveDays can be recoded to 0.
+
+### Outcome
+
+The outcome variable is DaysMentHlthBad, and it is categorical/binary (Yes/No).
+
+### Confounders
+
+Potential confounders are age, sex, race/ethnicity, socioeconomic status, smoking and alcohol use, BMI, and employment.
+
+### Analysis
+
+I plan to fit a multiple logistic regression to explore the relationship between physical activity and sleep. I will consider confounders, potential effect modification, and interaction terms while building this model. I plan to report the odds ratio and 95% confidence interval.
+
+## Vignette 2: Firearm laws and firearm mortality across US states
+
+### Research question
+
+Is the number of firearm laws in effect in a state associated with the state's firearm mortality rate in the following year?
+
+### Data source
+
+The data are from the RAND database and CDC firearm mortality data. The RAND data is accessed here: <https://www.rand.org/pubs/tools/TLA243-2-v4.html> and the CDC firearm mortality data is accessed here: <https://www.cdc.gov/nchs/state-stats/deaths/homicide.html>.
+
+### Unit of analysis and population
+
+The unit of analysis is one state in one year. The population is US states over the years.
+
+### Exposure
+
+The exposure variable is the number of firearm laws in effect in a state-year, and it is a continuous count variable. The two datasets can be merged by state and year. State-years with missing law information will be excluded.
+
+### Outcome
+
+The outcome variable is the number of firearm deaths in a state-year, and it is a discrete count.
+
+### Confounders
+
+Some potential confounders are year, census region, state population, and the previous year's firearm mortality rate.
+
+### Analysis
+
+I plan to fit a negative binomial regression (since this is count data) to explore the relationship between the number of firearm laws and firearm mortality. I will consider confounders, potential effect modification by region, and interaction terms while building this model. I plan to report the rate ratio and 95% confidence interval.
